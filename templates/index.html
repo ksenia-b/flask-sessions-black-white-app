@@ -7,8 +7,16 @@
 <body>
     <div style="text-align: center;">
         <h1>My website</h1>
+        {% if session['mode'] == 'dark' %}
+        <style>
+            body{
+                background-color: black;
+                color: white;
+            }
+        </style>
+        {% endif %}
         <a href="{{ url_for('set_background', mode='light') }}">Light mode</a>
-        <a href="{{ url_for('set_background', mode='light') }}">Dark mode</a>
+        <a href="{{ url_for('set_background', mode='dark') }}">Dark mode</a>
     </div>
 </body>
 </html>
