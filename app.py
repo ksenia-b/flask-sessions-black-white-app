@@ -11,3 +11,8 @@ def index():
 def set_background(mode):
     session['mode'] = mode
     return redirect(url_for('index'))
+
+@app.route('/drop-session')
+def drop_session():
+    session.pop('mode', None)
+    return redirect(url_for('index'))
